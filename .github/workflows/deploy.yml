@@ -1,0 +1,43 @@
+name: Deploy
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.16.0]
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Install dependencies
+      run: npm install -f
+    
+    - name: Build
+      run: npm run build:prod
+
+    - name: Deploy
+      run: |
+        which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )
+        apt-get update && apt-get install -y rsync
+        eval $(ssh-agent -s)
+        ssh-add <(echo "${{ secrets.SSH_PRIVATE_KEY }}")
+        mkdir -p ~/.ssh
+        chmod 700 ~/.ssh
+        ssh-keyscan ${{ secrets.HOSTNAME }} >> ~/.ssh/known_hosts
+        chmod 644 ~/.ssh/known_hosts
+        ssh gamify-admin@${{ secrets.HOSTNAME }} 'cd ~ && rm -rf gamify-api && mkdir -p gamify-api'
+        rsync -avuz --exclude-from './.dockerignore' . gamify-admin@${{ secrets.HOSTNAME }}:~/gamify-api
+        ssh gamify-admin@${{ secrets.HOSTNAME }} 'bash -s' < ./scripts/setup.sh

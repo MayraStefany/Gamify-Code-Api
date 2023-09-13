@@ -1,0 +1,796 @@
+{
+	"info": {
+		"_postman_id": "5e59f5bd-f0ea-4fd3-a581-4bd34e8aabb6",
+		"name": "Gamify",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"diegokraenau@gmail.com\",\r\n    \"password\": \"diego2009\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/users",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"postman.setEnvironmentVariable(\"USER_ID\", jsonData._id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"diegokraenau@gmail.com\",\r\n    \"password\": \"diego2009\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/users/login",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List weeks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/weeks",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"weeks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register weeks",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"weeks\": [\r\n        {\r\n            \"number\": 1,\r\n            \"start\": \"2020-03-20 00:00:00.000Z\",\r\n            \"end\": \"2020-03-27 00:00:00.000Z\"\r\n        },\r\n        {\r\n            \"number\": 2,\r\n            \"start\": \"2020-03-1 00:00:00.000Z\",\r\n            \"end\": \"2020-03-8 00:00:00.000Z\"\r\n        },\r\n        {\r\n            \"number\": 3,\r\n            \"start\": \"2020-03-8 00:00:00.000Z\",\r\n            \"end\": \"2020-03-15 00:00:00.000Z\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/weeks",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"weeks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List courses",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/courses",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"courses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create courses",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"courses\": [\r\n        {\r\n            \"name\": \"Curso 2\",\r\n            \"records\": [\r\n                {\r\n                    \"weekId\": \"{{WEEKS_0}}\",\r\n                    \"topics\": [\r\n                        \"topic1\",\r\n                        \"topic2\"\r\n                    ]\r\n                },\r\n                {\r\n                    \"weekId\": \"{{WEEKS_1}}\",\r\n                    \"topics\": [\r\n                        \"topic3\",\r\n                        \"topic4\"\r\n                    ]\r\n                },\r\n                {\r\n                    \"weekId\": \"{{WEEKS_2}}\",\r\n                    \"topics\": [\r\n                        \"topic5\",\r\n                        \"topic6\"\r\n                    ]\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/courses",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"courses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get surveys done by user id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{URL}}/surveys/user/{{USER_ID}}",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"surveys",
+						"user",
+						"{{USER_ID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create survey",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": \"{{USER_ID}}\",\r\n    \"weekId\": \"{{WEEKS_0}}\",\r\n    \"timeManagement\": 5,\r\n    \"participation\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/surveys",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"surveys"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List global surveys",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/global-surveys",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"global-surveys"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create global survey",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": \"{{USER_ID}}\",\r\n    \"participation\": 5,\r\n    \"taskCompletion\": 5,\r\n    \"timeManagement\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/global-surveys",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"global-surveys"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get global config",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/global-config",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"global-config"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update week",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"date\": \"2020-03-8 00:00:00.000Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/global-config/update-week",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"global-config",
+						"update-week"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add user token",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"token\": \"token\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/users/{{USER_ID}}/add-token",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"users",
+						"{{USER_ID}}",
+						"add-token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create event",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"summary\": \"evento 1\",\r\n    \"description\": \"description 1\",\r\n    \"startDate\": \"2020-03-2 10:30:00.000Z\",\r\n    \"endDate\": \"2020-03-2 12:00:00.000Z\",\r\n    \"priority\": \"LOW\",\r\n    \"user\": \"{{USER_ID}}\",\r\n    \"tokenInherited\": \"tokenInherited\",\r\n    \"repeat\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/events",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"events"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List events by user id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/events/user/{{USER_ID}}",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"events",
+						"user",
+						"{{USER_ID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete event by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/events/64796461df0cfe46c82f8ddb",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"events",
+						"64796461df0cfe46c82f8ddb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get event by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/events/64796461df0cfe46c82f8dd2",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"events",
+						"64796461df0cfe46c82f8dd2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update event by id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"summary\": \"diego\",\r\n    \"startDate\": \"2020-03-5 12:00:00.000Z\",\r\n    \"endDate\": \"2020-03-5 13:00:00.000Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/events/647969076781ed59a0d2e7fe",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"events",
+						"647969076781ed59a0d2e7fe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Close event by id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/events/647969076781ed59a0d2e7fe/close",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"events",
+						"647969076781ed59a0d2e7fe",
+						"close"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add benefit",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "pc1",
+							"type": "text"
+						},
+						{
+							"key": "points",
+							"value": "50",
+							"type": "text"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/D:/CosasDiego/CartaOferta_DiegoKraenau.pdf"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{URL}}/benefits",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"benefits"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List benefits",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/benefits",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"benefits"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List benefits of user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/benefits/user/{{USER_ID}}",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"benefits",
+						"user",
+						"{{USER_ID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buy benefit",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": \"{{USER_ID}}\",\r\n    \"benefitId\": \"6479754264c9635cac39df8c\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/benefits/buy",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"benefits",
+						"buy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List goals by user id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/goals/user/{{USER_ID}}",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"goals",
+						"user",
+						"{{USER_ID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create goal",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": \"{{USER_ID}}\",\r\n    \"title\": \"obetivo 1\",\r\n    \"description\": \"description 1\",\r\n    \"date\": \"2020-03-2 00:00:00.000Z\",\r\n    \"courseId\": \"6477fe8169152234c40362ec\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/goals",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"goals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get goal by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/goals/647a1803b95bdd4b083d3e3c",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"goals",
+						"647a1803b95bdd4b083d3e3c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Complete goal by id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/goals/647a1803b95bdd4b083d3e3c/complete",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"goals",
+						"647a1803b95bdd4b083d3e3c",
+						"complete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get surveys summary",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/surveys/user/{{USER_ID}}/summary",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"surveys",
+						"user",
+						"{{USER_ID}}",
+						"summary"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get events summary by user id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/events/user/{{USER_ID}}/summary",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"events",
+						"user",
+						"{{USER_ID}}",
+						"summary"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all notifications",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/notifications",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"notifications"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create notification",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Noti 1d\",\r\n    \"message\": \"sadasfa\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/notifications",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"notifications"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send recover code to email",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"diegokraenau@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/users/recover-code",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"users",
+						"recover-code"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Recover password",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"diegokraenau@gmail.com\",\r\n    \"password\": \"diego2009\",\r\n    \"recoverCode\": \"964739\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/users/recover-password",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"users",
+						"recover-password"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

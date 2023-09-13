@@ -1,0 +1,3 @@
+db['global-config'].insertOne({
+    "week": NumberInt(1)
+})

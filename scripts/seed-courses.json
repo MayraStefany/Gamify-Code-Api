@@ -1,0 +1,269 @@
+{
+  "courses": [
+    {
+      "name": "Gestión de Tecnología de Información",
+      "records": [
+        {
+          "weekId": "{{WEEKS_0}}",
+          "topics": [
+            "The importance of IT Service Management",
+            "Methodological approaches for service management",
+            "ITIL definition and origins"
+          ]
+        },
+        {
+          "weekId": "{{WEEKS_1}}",
+          "topics": [
+            "Service Management Basics",
+            "The 4 Dimensions of Service Management",
+            "The Service Value System (ITIL 4 SVS)"
+          ]
+        },
+        {
+          "weekId": "{{WEEKS_2}}",
+          "topics": [
+            "Service Management Practices - Delivery and Support",
+            "Service Desk",
+            "Incident Management",
+            "Problem Management"
+          ]
+        },
+        {
+          "weekId": "{{WEEKS_3}}",
+          "topics": [
+            "Service Management Practices - Delivery and Support",
+            "Service Request Management",
+            "Event Management"
+          ]
+        },
+        {
+          "weekId": "{{WEEKS_4}}",
+          "topics": [
+            "Service Management Practices: Design/Transition and Acquire/Build",
+            "Service Design",
+            "IT Asset Management",
+            "Service Configuration",
+            "Change Control",
+            "PC"
+          ]
+        },
+        {
+          "weekId": "{{WEEKS_5}}",
+          "topics": [
+            "Service Management Practices: Design/Transition and Acquire/Build",
+            "Release Management",
+            "Service Validation and Testing"
+          ]
+        },
+        {
+          "weekId": "{{WEEKS_6}}",
+          "topics": [
+            "Trabajo Parcial"
+          ]
+        },
+        {
+          "weekId": "{{WEEKS_7}}",
+          "topics": [
+            "Examen Parcial"
+          ]
+        },
+        {
+          "weekId": "{{WEEKS_8}}",
+          "topics": [
+            "Service management practices: contract, plan and improve",
+            "Business analysis",
+            "Service catalog management",
+            "Service level management"
+          ]
+        },
+        {
+          "weekId": "{{WEEKS_9}}",
+          "topics": [
+            "Service management practices: contract, plan and improve",
+            "Availability Management",
+            "Service continuity management",
+            "Capacity and Performance"
+          ]
+        },
+        {
+          "weekId": "{{WEEKS_10}}",
+          "topics": [
+            "Technical Management Practices",
+            "Implementation Management",
+            "Infrastructure and Platform Management",
+            "Software Management and Development"
+          ]
+        },
+        {
+          "weekId": "{{WEEKS_11}}",
+          "topics": [
+            "PC2"
+          ]
+        },
+        {
+          "weekId": "{{WEEKS_12}}",
+          "topics": [
+            "Relationship Management",
+            "Risk Management",
+            "Service Financial Management",
+            "Strategy Management",
+            "Supplier Management",
+            "Workforce and Talent Management"
+          ]
+        },
+        {
+          "weekId": "{{WEEKS_13}}",
+          "topics": [
+            "Service Management Basics",
+            "The 4 Dimensions of Service Management",
+            "The Service Value System (ITIL 4 SVS)"
+          ]
+        },
+        {
+          "weekId": "{{WEEKS_14}}",
+          "topics": [
+            "Trabajo Final"
+          ]
+        },
+        {
+          "weekId": "{{WEEKS_15}}",
+          "topics": [
+            "Examen Final"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Gestion de Seguridad de Informacion",
+      "records": [
+        {
+          "weekId": "{{WEEKS_0}}",
+          "topics": [
+            "CIO, CTO, CISO, CSO, Skills",
+            "Estructuras organizativas para seguridad de información"
+          ]
+        },
+        {
+          "weekId": "{{WEEKS_1}}",
+          "topics": [
+            "Porque necesitamos un CISO",
+            "Gobierno de seguridad de la información",
+            "Programa de Gestión de seguridad"
+          ]
+        },
+        {
+          "weekId": "{{WEEKS_2}}",
+          "topics": [
+            "Visión general del gobierno de la seguridad de la información",
+            "Tecnologías de seguridad de la información"
+          ]
+        },
+        {
+          "weekId": "{{WEEKS_3}}",
+          "topics": [
+            "Propósito de la estrategia de seguridad",
+            "Responsabilidad de la Gerencia"
+          ]
+        },
+        {
+          "weekId": "{{WEEKS_4}}",
+          "topics": [
+            "Estado deseado de la seguridad",
+            "Fundamentos, ciclo de vida de la política"
+          ]
+        },
+        {
+          "weekId": "{{WEEKS_5}}",
+          "topics": [
+            "Transformación digital (DT): Implicaciones de seguridad",
+            "Mejores prácticas- PC"
+          ]
+        },
+        {
+          "weekId": "{{WEEKS_6}}",
+          "topics": [
+            "Gestión del Riesgo",
+            "Introducción a la Administración de riesgos",
+            "Metodologías: OCTAVE, FRAP, NIST-800-30",
+            "El proceso de 9 pasos del NIST 800-30",
+            "Trabajo Parcial"
+          ]
+        },
+        {
+          "weekId": "{{WEEKS_7}}",
+          "topics": [
+            "Examen Parcial"
+          ]
+        },
+        {
+          "weekId": "{{WEEKS_8}}",
+          "topics": [
+            "Metodologías: OCTAVE, FRAP, NIST-800-30",
+            "El proceso de 9 pasos del NIST 800-30",
+            "Gestión de Incidente",
+            "Introducción a la gestión de incidentes",
+            "Que es la respuesta a incidentes"
+          ]
+        },
+        {
+          "weekId": "{{WEEKS_9}}",
+          "topics": [
+            "Ciclo de vida de respuesta a incidentes a identificar",
+            "Continuidad del negocio y recuperación de desastres",
+            "Introducción y Fases BCP",
+            "Capacity and Performance",
+            "BIA",
+            "Fases restantes de BCP"
+          ]
+        },
+        {
+          "weekId": "{{WEEKS_10}}",
+          "topics": [
+            "Los 4 pasos a priorizar",
+            "Conceptos legales relativos a la ciberseguridad",
+            "TCO vs. ROI",
+            "Traducir las amenazas técnicas al riesgo empresarial"
+          ]
+        },
+        {
+          "weekId": "{{WEEKS_11}}",
+          "topics": [
+            "PC2"
+          ]
+        },
+        {
+          "weekId": "{{WEEKS_12}}",
+          "topics": [
+            "Espoliación en el campo de la ciberseguridad",
+            "Cadena de suministro",
+            "Implicaciones de ciberseguridad para las empresas que cotizan en bolsa",
+            "Procesos de suscripción y consideraciones"
+          ]
+        },
+        {
+          "weekId": "{{WEEKS_13}}",
+          "topics": [
+            "Revisión y entendimiento de los controles propuestos en el Anexo A de la norma",
+            "Elaboración de una Declaración de Aplicabilidad",
+            "Identificación de controles a ser aplicables a los casos propuestos"
+          ]
+        },
+        {
+          "weekId": "{{WEEKS_14}}",
+          "topics": [
+            "Consideraciones para una Auditoría de un SGSI",
+            "Pasos recomendados de una auditoría",
+            "Documentación de Auditoría",
+            "Trabajo Final"
+          ]
+        },
+        {
+          "weekId": "{{WEEKS_15}}",
+          "topics": [
+            "Examen Final"
+          ]
+        }
+      ]
+    }
+  ]
+}
